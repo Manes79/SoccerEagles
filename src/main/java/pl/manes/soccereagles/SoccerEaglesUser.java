@@ -1,29 +1,29 @@
 package pl.manes.soccereagles;
 
-import pl.manes.soccereagles.inputUser.MasterEaglesCommand;
-import pl.manes.soccereagles.inputUser.MasterEaglesData;
+import pl.manes.soccereagles.inputUser.MasterUserCommand;
+import pl.manes.soccereagles.inputUser.MasterUserData;
 
 public class SoccerEaglesUser {
     public static void main(String[] args) {
 
-        new SoccerEaglesUser().beginEagles();
+        new SoccerEaglesUser().beginUser();
     }
 
-    private void beginEagles() {
+    private void beginUser() {
 
-        boolean beginEagles = true;
+        boolean beginUser = true;
 
-        MasterEaglesData masterEaglesData = new MasterEaglesData();
+        MasterUserData masterUserData = new MasterUserData();
 
         System.out.println("Start Soccer Eagles app");
 
         //todo
-        //logging into the app
+        // loggin into the app
 
-        while (beginEagles) {
+        while (beginUser) {
             try {
-                MasterEaglesCommand masterEaglesCommand = masterEaglesData.anotherCommand();
-                System.out.println(masterEaglesCommand);
+                MasterUserCommand masterUserCommand = masterUserData.anotherCommand();
+                System.out.println(masterUserCommand);
             } catch (Exception e) {
                 e.printStackTrace();
             }
