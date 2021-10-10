@@ -14,14 +14,14 @@ public class MasterManagerCommand {
 
     public MasterManagerCommand(String managerLine) {
 
-        if (managerLine != null){
+        if (managerLine != null) {
             String[] arrayManager = managerLine.split("\\s");
 
-            if (arrayManager.length > 0){
+            if (arrayManager.length > 0) {
                 command = arrayManager[0];
             }
 
-            if (arrayManager.length > 1){
+            if (arrayManager.length > 1) {
                 action = arrayManager[1];
             }
 
