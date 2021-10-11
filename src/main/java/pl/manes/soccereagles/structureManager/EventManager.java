@@ -2,11 +2,11 @@ package pl.manes.soccereagles.structureManager;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class EventManager {
 
-    // type of event
-    private String event;
+    private final String event;
 
     public EventManager(String event) {
         this.event = event;

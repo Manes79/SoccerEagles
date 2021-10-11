@@ -1,5 +1,6 @@
 package pl.manes.soccereagles;
 
+import pl.manes.soccereagles.handlersManager.EventManagerHandler;
 import pl.manes.soccereagles.handlersManager.HelpManagerHandler;
 import pl.manes.soccereagles.handlersManager.MasterManagerHandler;
 import pl.manes.soccereagles.handlersManager.QuitManagerHandler;
@@ -25,10 +26,12 @@ public class SoccerEaglesManager {
 
         System.out.println("Start Soccer Eagles app");
         System.out.println("Enter the command help help for available options");
+        System.out.println("Enter the command quit quit for close the app");
 
         List<MasterManagerHandler> managerHandlers = new ArrayList<>();
         managerHandlers.add(new HelpManagerHandler());
         managerHandlers.add(new QuitManagerHandler());
+        managerHandlers.add(new EventManagerHandler());
 
         //todo
         // logging into the app

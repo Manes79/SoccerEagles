@@ -4,7 +4,7 @@ import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 public class HelpManagerHandler extends BasicCommandManagerHandler {
 
-    public static final String COMMAND_NAME = "help";
+    private static final String COMMAND_NAME = "help";
 
     @Override
     protected Object getCommandName() {
@@ -13,19 +13,19 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
 
     @Override
     public void interceptionsManager(MasterManagerCommand command) {
-        super.interceptionsManager(command);
 
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available commands:");
-        } else if ("quit".equals(action)) {
-            System.out.println("Closing the app");
+            System.out.println("Available commands: help, add, list");
+            System.out.println("Available category: event, ...");
         }
-
-        System.out.println("Allowed commands: help, quite, category, question, answer");
-        System.out.println("Command pattern: <command> <action> <parameters1> <parameters2>");
-        System.out.println("Example: category add CategoryName");
-
+        else if ("add".equals(action)) {
+            System.out.println("Add some category");
+        }
+        else if ("list".equals(action)) {
+            System.out.println("Display added events");
+        }
+        else throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
     }
 }

@@ -6,7 +6,7 @@ import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 public class QuitManagerHandler extends BasicCommandManagerHandler {
 
-    public static final String COMMAND_NAME = "quit";
+    private static final String COMMAND_NAME = "quit";
 
     @Override
     protected Object getCommandName() {
