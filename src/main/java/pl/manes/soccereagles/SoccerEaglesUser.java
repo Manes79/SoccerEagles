@@ -1,6 +1,6 @@
 package pl.manes.soccereagles;
 
-import pl.manes.soccereagles.handlersUser.MasterUserHandler;
+import pl.manes.soccereagles.handlersUser.*;
 import pl.manes.soccereagles.inputUser.MasterUserCommand;
 import pl.manes.soccereagles.inputUser.MasterUserData;
 
@@ -21,8 +21,14 @@ public class SoccerEaglesUser {
         MasterUserData masterUserData = new MasterUserData();
 
         System.out.println("Start Soccer Eagles app");
+        System.out.println("Enter the command help help for available options");
+        System.out.println("Enter the command quit quit for close the app");
 
         List<MasterUserHandler> userHandlers = new ArrayList<>();
+        userHandlers.add(new HelpUserHandler());
+        userHandlers.add(new QuitUserHandler());
+        userHandlers.add(new ConfirmedUserEventHandler());
+        userHandlers.add(new DeclinedUserEventHandler());
 
         //todo
         // loggin into the app
@@ -43,6 +49,11 @@ public class SoccerEaglesUser {
                 timelyHandler
                         .orElseThrow(() -> new IllegalArgumentException("Unknown handler: " + masterUserCommand.getCommand()))
                         .interceptionUser(masterUserCommand);
+
+            } catch (QuitSoccerEaglesAppException e) {
+                System.out.println("Quit...");
+                beginUser = false;
+
 
             } catch (Exception e) {
                 e.printStackTrace();

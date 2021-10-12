@@ -1,8 +1,8 @@
-package pl.manes.soccereagles.handlersManager;
+package pl.manes.soccereagles.handlersUser;
 
-import pl.manes.soccereagles.inputManager.MasterManagerCommand;
+import pl.manes.soccereagles.inputUser.MasterUserCommand;
 
-public class HelpManagerHandler extends BasicCommandManagerHandler {
+public class HelpUserHandler extends BasicCommandUserHandler {
 
     private static final String COMMAND_NAME = "help";
 
@@ -12,17 +12,18 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    public void interceptionsManager(MasterManagerCommand command) {
+    public void interceptionUser(MasterUserCommand command) {
 
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available commands: help, add, list, event, statusConfirmed, statusDeclined, ...");
+            System.out.println("Available commands: help, add, list, confirm, declined, changeDecision, eventStatus");
         } else if ("add".equals(action)) {
             System.out.println("Add some category");
         } else if ("list".equals(action)) {
-            System.out.println("Display added events");
+            System.out.println("Displaying confirmation, rejection and change of the User's decision");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+
     }
 }

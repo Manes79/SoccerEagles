@@ -32,7 +32,7 @@ public class EventManagerDao {
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));
             readAllLines.add(eventManager.getEvent());
 
-            Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines ));
+            Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
             e.printStackTrace();

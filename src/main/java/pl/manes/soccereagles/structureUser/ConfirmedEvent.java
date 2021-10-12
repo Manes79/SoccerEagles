@@ -5,20 +5,20 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class ConfirmedEvent {
 
-    private String confirm;
+    private final String confirmingName;
 
     public ConfirmedEvent(String confirm) {
-        this.confirm = confirm;
+        this.confirmingName = confirm;
     }
 
-    public String getConfirm() {
-        return confirm;
+    public String getConfirmingName() {
+        return confirmingName;
     }
 
     @Override
     public String toString() {
         return "ConfirmedEvent{" +
-                "confirm='" + confirm + '\'' +
+                "confirmingName='" + confirmingName + '\'' +
                 '}';
     }
 }
