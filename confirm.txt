@@ -1,10 +1,6 @@
-Koni         
-Marcin        
-Robercik       
-Marcin      
-Zdzisiek     
-Włodek    
-Jacek   
-Rafał  
-Debek 
-Marek
+Koni            
+Marcin           
+Robercik          
+Marcin         
+Zdzisiek        
+Włodek       

@@ -45,33 +45,34 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
 
             case "statusConfirmed":
                 String confirmUsers = "confirm.txt";
-                File file = new File(confirmUsers);
-                Scanner scanner = new Scanner(file);
-                int lines = 0;
-                while (scanner.hasNextLine()) {
-                    String name = scanner.nextLine();
-                    System.out.println(name);
-                    lines++;
+                File fileConfirm = new File(confirmUsers);
+                Scanner scannerConfirm = new Scanner(fileConfirm);
+                int linesConfirm = 0;
+                while (scannerConfirm.hasNextLine()) {
+                    String nameConfirm = scannerConfirm.nextLine();
+                    System.out.println(nameConfirm);
+                    linesConfirm++;
                 }
-                System.out.println("Number of confirmed users " + lines);
+                System.out.println("Number of confirmed users " + linesConfirm);
 
-                scanner.close();
+                scannerConfirm.close();
                 break;
 
             case "statusDeclined":
                 String declinedUsers = "declined.txt";
-                File file1 = new File(declinedUsers);
-                Scanner scanner1 = new Scanner(file1);
-                int lines1 = 0;
-                while (scanner1.hasNextLine()) {
-                    String name = scanner1.nextLine();
-                    System.out.println(name);
-                    lines1++;
+                File fileDeclined = new File(declinedUsers);
+                Scanner scannerDeclined = new Scanner(fileDeclined);
+                int linesDeclined = 0;
+                while (scannerDeclined.hasNextLine()) {
+                    String nameDeclined = scannerDeclined.nextLine();
+                    System.out.println(nameDeclined);
+                    linesDeclined++;
                 }
-                System.out.println("Number of users declining an invitation to the event " + lines1);
+                System.out.println("Number of users declining an invitation to the event " + linesDeclined);
 
-                scanner1.close();
+                scannerDeclined.close();
                 break;
+
         }
     }
 }

@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class ManagerDecisionEvent {
 
-    private String decisionEvent;
+    private final String decisionEvent;
 
     public ManagerDecisionEvent(String decisionEvent) {
         this.decisionEvent = decisionEvent;

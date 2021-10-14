@@ -1,9 +1,6 @@
 package pl.manes.soccereagles;
 
-import pl.manes.soccereagles.handlersManager.EventManagerHandler;
-import pl.manes.soccereagles.handlersManager.HelpManagerHandler;
-import pl.manes.soccereagles.handlersManager.MasterManagerHandler;
-import pl.manes.soccereagles.handlersManager.QuitManagerHandler;
+import pl.manes.soccereagles.handlersManager.*;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 import pl.manes.soccereagles.inputManager.MasterManagerData;
 
@@ -12,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class SoccerEaglesManager {
+
     public static void main(String[] args) {
 
         new SoccerEaglesManager().beginManager();
@@ -32,6 +30,7 @@ public class SoccerEaglesManager {
         managerHandlers.add(new HelpManagerHandler());
         managerHandlers.add(new QuitManagerHandler());
         managerHandlers.add(new EventManagerHandler());
+        managerHandlers.add(new ManagerDecisionEventHandler());
 
         //todo
         // logging into the app

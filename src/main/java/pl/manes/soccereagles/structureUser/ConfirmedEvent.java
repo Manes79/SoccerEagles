@@ -18,7 +18,6 @@ public class ConfirmedEvent {
     @Override
     public String toString() {
         return "ConfirmedEvent{" +
-                "confirmingName='" + confirmingName + '\'' +
-                '}';
+                "confirmingName='" + confirmingName + '\'' + '}';
     }
 }

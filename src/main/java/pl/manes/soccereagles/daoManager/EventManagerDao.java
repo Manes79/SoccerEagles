@@ -28,7 +28,6 @@ public class EventManagerDao {
 
     public void addAll(EventManager eventManager) {
         try {
-
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));
             readAllLines.add(eventManager.getEvent());
 

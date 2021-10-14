@@ -29,6 +29,8 @@ public class SoccerEaglesUser {
         userHandlers.add(new QuitUserHandler());
         userHandlers.add(new ConfirmedUserEventHandler());
         userHandlers.add(new DeclinedUserEventHandler());
+        userHandlers.add(new EventUserStatusHandler());
+        userHandlers.add(new ChangeDecisionUserHandler());
 
         //todo
         // loggin into the app
