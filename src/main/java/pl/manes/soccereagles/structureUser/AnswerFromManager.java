@@ -2,10 +2,11 @@ package pl.manes.soccereagles.structureUser;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class AnswerFromManager {
 
-    private String answerName;
+    private final String answerName;
 
     public AnswerFromManager(String answerName) {
         this.answerName = answerName;

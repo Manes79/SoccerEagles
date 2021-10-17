@@ -2,10 +2,11 @@ package pl.manes.soccereagles.structureManager;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class SearchingUsers {
 
-    private String searchUser;
+    private final String searchUser;
 
     public SearchingUsers(String searchUser) {
         this.searchUser = searchUser;

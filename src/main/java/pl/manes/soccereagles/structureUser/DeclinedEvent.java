@@ -2,6 +2,7 @@ package pl.manes.soccereagles.structureUser;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class DeclinedEvent {
 

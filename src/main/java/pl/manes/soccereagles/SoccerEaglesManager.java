@@ -22,7 +22,7 @@ public class SoccerEaglesManager {
 
         MasterManagerData masterManagerData = new MasterManagerData();
 
-        System.out.println("Start Soccer Eagles app");
+        System.out.println("Start Soccer Eagles Manager app");
         System.out.println("Enter the command help help for available options");
         System.out.println("Enter the command quit quit for close the app");
 
@@ -30,7 +30,8 @@ public class SoccerEaglesManager {
         managerHandlers.add(new HelpManagerHandler());
         managerHandlers.add(new QuitManagerHandler());
         managerHandlers.add(new EventManagerHandler());
-        managerHandlers.add(new ManagerDecisionEventHandler());
+        managerHandlers.add(new DecisionEventManagerHandler());
+        managerHandlers.add(new DateEventManagerHandler());
 
         //todo
         // logging into the app

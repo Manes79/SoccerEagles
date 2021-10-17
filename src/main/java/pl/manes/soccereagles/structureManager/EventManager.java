@@ -10,6 +10,7 @@ public class EventManager {
 
     public EventManager(String event) {
         this.event = event;
+
     }
 
     public String getEvent() {

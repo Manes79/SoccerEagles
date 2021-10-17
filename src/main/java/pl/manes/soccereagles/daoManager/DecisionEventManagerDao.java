@@ -8,17 +8,18 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManagerDecisionEventDao {
+public class DecisionEventManagerDao {
 
-    public List<ManagerDecisionEvent> findAllManagerDecisionCategories() {
+
+    public List<ManagerDecisionEvent> findAllDecisionEventManagerCategories() {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./decision.txt"));
-            List<ManagerDecisionEvent> managerDecisionEvent = new ArrayList<>();
+            List<ManagerDecisionEvent> managerDecisionEvents = new ArrayList<>();
             for (String line : readAllLines) {
-                managerDecisionEvent.add(new ManagerDecisionEvent(line));
+                managerDecisionEvents.add(new ManagerDecisionEvent(line));
             }
 
-            return managerDecisionEvent;
+            return managerDecisionEvents;
 
         } catch (IOException e) {
             e.printStackTrace();

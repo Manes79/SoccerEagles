@@ -20,7 +20,7 @@ public class SoccerEaglesUser {
 
         MasterUserData masterUserData = new MasterUserData();
 
-        System.out.println("Start Soccer Eagles app");
+        System.out.println("Start Soccer Eagles User app");
         System.out.println("Enter the command help help for available options");
         System.out.println("Enter the command quit quit for close the app");
 

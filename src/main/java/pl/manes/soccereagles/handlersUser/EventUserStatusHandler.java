@@ -34,6 +34,21 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
 
                 statusScanner.close();
                 break;
+
+            case "list":
+                String listEvent = "event.txt.";
+                File listFile = new File(listEvent);
+                Scanner listScanner = new Scanner(listFile);
+
+                int listLines = 0;
+                while (listScanner.hasNextLine()) {
+                    String listStatus = listScanner.nextLine();
+                    System.out.println(listStatus);
+                    listLines++;
+                }
+
+                listScanner.close();
+                break;
         }
     }
 }

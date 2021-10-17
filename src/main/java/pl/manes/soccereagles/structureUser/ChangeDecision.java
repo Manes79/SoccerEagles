@@ -2,10 +2,11 @@ package pl.manes.soccereagles.structureUser;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class ChangeDecision {
 
-    private String changeDecision;
+    private final String changeDecision;
 
     public ChangeDecision(String changeDecision) {
         this.changeDecision = changeDecision;

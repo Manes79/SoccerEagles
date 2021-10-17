@@ -17,7 +17,7 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available command: help, event, statusConfirmed, statusDeclined, decision ");
+            System.out.println("Available command: help, event, dataEvent, statusConfirmed, statusDeclined, decision ");
         } else if ("add".equals(action)) {
             System.out.println("Add some category");
         } else if ("list".equals(action)) {

@@ -17,7 +17,7 @@ public class HelpUserHandler extends BasicCommandUserHandler {
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available commands: help, add, list, confirm, declined, event, changeDecision, eventStatus");
+            System.out.println("Available commands: help, add, list, confirm, declined, event, eventStatus, change, changeDecision");
         } else if ("add".equals(action)) {
             System.out.println("Add some category");
         } else if ("list".equals(action)) {

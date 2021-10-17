@@ -2,6 +2,7 @@ package pl.manes.soccereagles.structureManager;
 
 import lombok.EqualsAndHashCode;
 
+@SuppressWarnings("ALL")
 @EqualsAndHashCode
 public class ManagerDecisionEvent {
 
