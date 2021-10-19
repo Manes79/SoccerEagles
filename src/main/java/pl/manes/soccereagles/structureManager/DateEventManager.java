@@ -10,7 +10,9 @@ public class DateEventManager {
 
     public DateEventManager(String dataEvent) {
         this.dateEvent = dataEvent;
+
     }
+
 
     public String getDataEvent() {
         return dateEvent;

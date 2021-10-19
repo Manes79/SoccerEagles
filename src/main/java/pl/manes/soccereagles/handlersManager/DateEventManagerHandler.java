@@ -38,6 +38,9 @@ public class DateEventManagerHandler extends BasicCommandManagerHandler {
                 dateEventManagers.forEach(System.out::println);
                 break;
 
+            default: {
+                throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+            }
         }
     }
 }

@@ -59,6 +59,9 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
                 managerDecisionEvents.forEach(System.out::println);
                 break;
 
+            default: {
+                throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+            }
         }
     }
 }

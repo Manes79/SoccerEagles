@@ -49,6 +49,10 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
 
                 listScanner.close();
                 break;
+
+            default: {
+                throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+            }
         }
     }
 }

@@ -24,6 +24,5 @@ public class HelpUserHandler extends BasicCommandUserHandler {
             System.out.println("Displaying confirmation, rejection and change of the User's decision and event status");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
-
     }
 }

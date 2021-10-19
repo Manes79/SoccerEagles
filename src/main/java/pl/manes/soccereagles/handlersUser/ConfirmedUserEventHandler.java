@@ -39,9 +39,8 @@ public class ConfirmedUserEventHandler extends BasicCommandUserHandler {
                 confirmedEvent.forEach(System.out::println);
                 break;
 
-            default: {
+            default:
                 throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
-            }
         }
     }
 }

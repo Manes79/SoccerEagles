@@ -32,7 +32,7 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
         switch (command.getAction()) {
 
             case "add":
-                System.out.println("A new event has been added");
+                System.out.println("A new event has been added ");
                 String event = command.getTypedCommand().get(0);
                 eventManagerDao.addAll(new EventManager(event));
                 break;
@@ -73,6 +73,9 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 scannerDeclined.close();
                 break;
 
+            default: {
+                throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+            }
         }
     }
 }
