@@ -32,6 +32,7 @@ public class SoccerEaglesManager {
         managerHandlers.add(new EventManagerHandler());
         managerHandlers.add(new DecisionEventManagerHandler());
         managerHandlers.add(new DateEventManagerHandler());
+        managerHandlers.add(new InformationForUsersManagerHandler());
 
         //todo
         // logging into the app

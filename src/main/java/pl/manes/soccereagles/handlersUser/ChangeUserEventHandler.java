@@ -40,9 +40,9 @@ public class ChangeUserEventHandler extends BasicCommandUserHandler {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }
         }
     }
 }
+
