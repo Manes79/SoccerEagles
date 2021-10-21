@@ -17,11 +17,11 @@ public class HelpUserHandler extends BasicCommandUserHandler {
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available commands: help, add, list, confirm, declined, event, eventStatus, change, changeDecision");
+            System.out.println("Available commands: add, list, confirm, declined, event, eventStatus, infoFromManager, announcement, questionTo");
         } else if ("add".equals(action)) {
             System.out.println("Add some category");
         } else if ("list".equals(action)) {
-            System.out.println("Displaying confirmation, rejection and change of the User's decision and event status");
+            System.out.println("Displaying confirmations and rejections of the User's decision, event status and information from Event Manager");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
     }

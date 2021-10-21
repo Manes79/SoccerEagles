@@ -17,11 +17,11 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
         Object action = command.getAction();
 
         if ("help".equals(action)) {
-            System.out.println("Available command: help, event, dateEvent, statusConfirmed, statusDeclined, decision ");
+            System.out.println("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, resetEvent");
         } else if ("add".equals(action)) {
             System.out.println("Add some category");
         } else if ("list".equals(action)) {
-            System.out.println("Displays a list of added events and decisions about events");
+            System.out.println("Displays a list of added events, decisions about events and questions from Users");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
     }

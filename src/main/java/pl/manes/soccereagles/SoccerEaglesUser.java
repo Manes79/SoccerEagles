@@ -30,8 +30,8 @@ public class SoccerEaglesUser {
         userHandlers.add(new ConfirmedUserEventHandler());
         userHandlers.add(new DeclinedUserEventHandler());
         userHandlers.add(new EventUserStatusHandler());
-        userHandlers.add(new ChangeUserEventHandler());
         userHandlers.add(new InformationForUsersHandler());
+        userHandlers.add(new QuestionsFromUsersToManagerHandler());
 
         //todo
         // loggin into the app
