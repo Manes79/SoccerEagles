@@ -13,7 +13,6 @@ public class DateEventManager {
 
     }
 
-
     public String getDataEvent() {
         return dateEvent;
     }

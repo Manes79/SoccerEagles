@@ -10,7 +10,6 @@ import java.util.List;
 
 public class DateEventManagerDao {
 
-
     public List<DateEventManager> findAllDataEventManagerCategories() {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));

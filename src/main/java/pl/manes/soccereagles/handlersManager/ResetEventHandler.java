@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
 public class ResetEventHandler extends BasicCommandManagerHandler {
 
     private final static String COMMAND_NAME = "resetEvent";
@@ -58,7 +57,6 @@ public class ResetEventHandler extends BasicCommandManagerHandler {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 }

@@ -18,7 +18,6 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
     public EventManagerHandler() {
 
         eventManagerDao = new EventManagerDao();
-
     }
 
     @Override

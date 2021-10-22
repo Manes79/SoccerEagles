@@ -10,7 +10,6 @@ import java.util.List;
 
 public class DecisionEventManagerDao {
 
-
     public List<ManagerDecisionEvent> findAllDecisionEventManagerCategories() {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./decision.txt"));

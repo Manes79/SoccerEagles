@@ -8,5 +8,4 @@ abstract class BasicCommandManagerHandler implements MasterManagerHandler {
     }
 
     protected abstract Object getCommandName();
-
 }

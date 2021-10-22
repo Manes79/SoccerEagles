@@ -16,6 +16,5 @@ public class QuitUserHandler extends BasicCommandUserHandler {
     public void interceptionUser(MasterUserCommand command) {
 
         throw new QuitSoccerEaglesAppException();
-
     }
 }

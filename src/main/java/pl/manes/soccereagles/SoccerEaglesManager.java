@@ -13,7 +13,6 @@ public class SoccerEaglesManager {
     public static void main(String[] args) {
 
         new SoccerEaglesManager().beginManager();
-
     }
 
     private void beginManager() {
@@ -35,6 +34,7 @@ public class SoccerEaglesManager {
         managerHandlers.add(new InformationForUsersManagerHandler());
         managerHandlers.add(new QuestionFromUsersHandler());
         managerHandlers.add(new ResetEventHandler());
+        managerHandlers.add(new SearchingUsersHandler());
 
         //todo
         // logging into the app
