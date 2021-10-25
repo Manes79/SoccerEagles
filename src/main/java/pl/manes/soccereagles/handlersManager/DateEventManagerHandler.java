@@ -28,8 +28,10 @@ public class DateEventManagerHandler extends BasicCommandManagerHandler {
         switch (command.getAction()) {
 
             case "add":
-                String dateEvent = command.getTypedCommand().get(0);
-                dateEventManagerDao.addAll(new DateEventManager(dateEvent));
+                String eventDay = command.getTypedCommand().get(0);
+                String eventYear = command.getTypedCommand().get(1);
+                String eventHour = command.getTypedCommand().get(2);
+                dateEventManagerDao.addAll(new DateEventManager(eventDay, eventYear, eventHour));
                 System.out.println("A new data for event has been added ");
                 break;
 

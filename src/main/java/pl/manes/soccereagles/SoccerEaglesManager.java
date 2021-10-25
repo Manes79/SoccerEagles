@@ -34,7 +34,7 @@ public class SoccerEaglesManager {
         managerHandlers.add(new InformationForUsersManagerHandler());
         managerHandlers.add(new QuestionFromUsersHandler());
         managerHandlers.add(new ResetEventHandler());
-        managerHandlers.add(new SearchingUsersHandler());
+        managerHandlers.add(new SearchingRandomPlayerHandler());
 
         //todo
         // logging into the app

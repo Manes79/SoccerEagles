@@ -29,9 +29,11 @@ public class DateEventManagerDao {
     public void addAll(DateEventManager dateEventManager) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));
-            readAllLines.add(dateEventManager.getDataEvent());
+            readAllLines.add(dateEventManager.getEventDay());
+            readAllLines.add(dateEventManager.getEventYear());
+            readAllLines.add(String.valueOf(dateEventManager.getEventHour()));
 
-            Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines));
+            Files.writeString(Paths.get("./event.txt"), String.join(" ", readAllLines));
 
         } catch (IOException e) {
             e.printStackTrace();

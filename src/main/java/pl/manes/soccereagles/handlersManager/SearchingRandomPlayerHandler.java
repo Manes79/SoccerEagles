@@ -6,9 +6,9 @@ import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class SearchingUsersHandler extends BasicCommandManagerHandler {
+public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
 
-    private static final String COMMAND_NAME = "search";
+    private static final String COMMAND_NAME = "randomPlayer";
 
     @Override
     protected Object getCommandName() {
@@ -19,7 +19,7 @@ public class SearchingUsersHandler extends BasicCommandManagerHandler {
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException, MalformedURLException {
 
         try {
-            if ("randomUser".equals(command.getAction())) {
+            if ("randomPlayer".equals(command.getAction())) {
                 URL randomUser = new URL("https://www.facebook.com/groups/450635788300121");
                 System.out.println(randomUser.toString());
 

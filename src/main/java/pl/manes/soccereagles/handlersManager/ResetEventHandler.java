@@ -56,6 +56,7 @@ public class ResetEventHandler extends BasicCommandManagerHandler {
                 Files.writeString(Paths.get("./questionToManager.txt"), String.join(" " + "\n"));
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
         }
     }
