@@ -6,40 +6,20 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class DateEventManager {
 
-    private String eventDay;
+    private final String eventDate;
 
-    private String eventYear;
-
-    private String eventHour;
-
-    public DateEventManager(String eventDay, String eventYear, String eventHour) {
-        this.eventDay = eventDay;
-        this.eventYear = eventYear;
-        this.eventHour = eventHour;
+    public DateEventManager(String eventDate) {
+        this.eventDate = eventDate;
     }
 
-    public DateEventManager(String line) {
-
-    }
-
-    public String getEventDay() {
-        return eventDay;
-    }
-
-    public String getEventYear() {
-        return eventYear;
-    }
-
-    public String getEventHour() {
-        return eventHour;
+    public String getEventDate() {
+        return eventDate;
     }
 
     @Override
     public String toString() {
         return "DateEventManager{" +
-                "eventDay='" + eventDay + '\'' +
-                ", eventYear='" + eventYear + '\'' +
-                ", eventHour='" + eventHour + '\'' +
+                "eventDate='" + eventDate + '\'' +
                 '}';
     }
 }

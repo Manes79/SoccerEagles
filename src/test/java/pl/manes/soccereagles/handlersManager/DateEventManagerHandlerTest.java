@@ -12,13 +12,13 @@ class DateEventManagerHandlerTest {
     @Test
     void CorrectlyEnteredDataFromManagerForTheNewDateEventWithMultipleTypedCommands() {
         //given
-        String inputData = "dateEvent add eventDay eventYear eventHour";
+        String inputData = "dateEvent add eventDate";
         //when
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("dateEvent", masterManagerCommand.getCommand());
         assertEquals("add", masterManagerCommand.getAction());
-        assertEquals(List.of("eventDay", "eventYear", "eventHour"), masterManagerCommand.getTypedCommand());
+        assertEquals(List.of("eventDate"), masterManagerCommand.getTypedCommand());
     }
 
     @Test
