@@ -25,7 +25,7 @@ The Event User has the following rights:
 
 Polish
 
-# SoccerEaagles
+# SoccerEagles
 prosta aplikacja pozwalająca na zarządzanie wydarzeniem, w tym przypadku meczem piłki nożnej na Orliku;
 podzielona na sekcję Menedżera i Użytkowników;
 
