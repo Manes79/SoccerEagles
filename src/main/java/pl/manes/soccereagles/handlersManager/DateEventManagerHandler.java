@@ -27,13 +27,13 @@ public class DateEventManagerHandler extends BasicCommandManagerHandler {
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 String eventDate = command.getTypedCommand().get(0);
                 dateEventManagerDao.addAll(new DateEventManager(eventDate));
                 System.out.println("A new data for event has been added ");
                 break;
 
-            case "list":
+            case LIST:
                 List<DateEventManager> dateEventManagers = dateEventManagerDao.findAllDataEventManagerCategories();
                 dateEventManagers.forEach(System.out::println);
                 break;

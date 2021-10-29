@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.handlersUser;
 
 import org.junit.jupiter.api.Test;
+import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputUser.MasterUserCommand;
 
 import java.util.List;
@@ -17,7 +18,7 @@ class QuestionsFromUsersToManagerHandlerTest {
         MasterUserCommand masterUserCommand = new MasterUserCommand(inputData);
         //then
         assertEquals("questionTo", masterUserCommand.getCommand());
-        assertEquals("add", masterUserCommand.getAction());
+        assertEquals(ActionUser.ADD, masterUserCommand.getAction());
         assertEquals(List.of("questionName"), masterUserCommand.getTypedCommand());
     }
 
@@ -29,6 +30,6 @@ class QuestionsFromUsersToManagerHandlerTest {
         MasterUserCommand masterUserCommand = new MasterUserCommand(inputData);
         //then
         assertEquals("questionTo", masterUserCommand.getCommand());
-        assertEquals("list", masterUserCommand.getAction());
+        assertEquals(ActionUser.LIST, masterUserCommand.getAction());
     }
 }

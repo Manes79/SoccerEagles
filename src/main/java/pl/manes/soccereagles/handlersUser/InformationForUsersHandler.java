@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersUser;
 
+import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputUser.MasterUserCommand;
 
 import java.io.File;
@@ -18,7 +19,7 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
     @Override
     public void interceptionUser(MasterUserCommand command) throws FileNotFoundException {
 
-        if ("announcement".equals(command.getAction())) {
+        if (ActionUser.ANNOUNCEMENT.equals(command.getAction())) {
             String infoFromMenago = "information.txt";
             File infoFile = new File(infoFromMenago);
             Scanner infoScanner = new Scanner(infoFile);

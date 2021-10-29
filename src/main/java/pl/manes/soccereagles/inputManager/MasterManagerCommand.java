@@ -1,5 +1,7 @@
 package pl.manes.soccereagles.inputManager;
 
+import pl.manes.soccereagles.ActionManager;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +10,7 @@ public class MasterManagerCommand {
 
     private String command;
 
-    private String action;
+    private ActionManager actionManager;
 
     private List<String> typedCommand;
 
@@ -22,7 +24,7 @@ public class MasterManagerCommand {
             }
 
             if (arrayManager.length > 1) {
-                action = arrayManager[1];
+                actionManager = ActionManager.of(arrayManager[1]);
             }
 
             typedCommand = new ArrayList<>();
@@ -34,8 +36,8 @@ public class MasterManagerCommand {
         return command;
     }
 
-    public String getAction() {
-        return action;
+    public ActionManager getAction() {
+        return actionManager;
     }
 
     public List<String> getTypedCommand() {
@@ -46,7 +48,7 @@ public class MasterManagerCommand {
     public String toString() {
         return "MasterManagerCommand{" +
                 "command='" + command + '\'' +
-                ", action='" + action + '\'' +
+                ", action='" + actionManager + '\'' +
                 ", typedCommand=" + typedCommand +
                 '}';
     }

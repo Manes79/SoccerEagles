@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.handlersUser;
 
 import org.junit.jupiter.api.Test;
+import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputUser.MasterUserCommand;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +16,7 @@ class EventUserStatusHandlerTest {
         MasterUserCommand masterUserCommand = new MasterUserCommand(inputData);
         //then
         assertEquals("event", masterUserCommand.getCommand());
-        assertEquals("eventStatus", masterUserCommand.getAction());
+        assertEquals(ActionUser.EVENT_STATUS, masterUserCommand.getAction());
     }
 
     @Test
@@ -26,6 +27,6 @@ class EventUserStatusHandlerTest {
         MasterUserCommand masterUserCommand = new MasterUserCommand(inputData);
         //then
         assertEquals("event", masterUserCommand.getCommand());
-        assertEquals("list", masterUserCommand.getAction());
+        assertEquals(ActionUser.LIST, masterUserCommand.getAction());
     }
 }

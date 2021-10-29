@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.handlersManager;
 
 import org.junit.jupiter.api.Test;
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +16,6 @@ class HelpManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("help", masterManagerCommand.getCommand());
-        assertEquals("help", masterManagerCommand.getAction());
+        assertEquals(ActionManager.HELP, masterManagerCommand.getAction());
     }
 }

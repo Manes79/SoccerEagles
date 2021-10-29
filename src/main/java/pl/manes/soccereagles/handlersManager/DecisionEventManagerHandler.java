@@ -47,14 +47,14 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
         }
 
         switch (command.getAction()) {
-            case "add":
+            case ADD:
 
                 String decisionEvent = command.getTypedCommand().get(0);
                 decisionEventManagerDao.addAll(new ManagerDecisionEvent(decisionEvent));
                 System.out.println("A new event decision has been added");
                 break;
 
-            case "list":
+            case LIST:
                 List<ManagerDecisionEvent> managerDecisionEvents = decisionEventManagerDao.findAllDecisionEventManagerCategories();
                 managerDecisionEvents.forEach(System.out::println);
                 break;

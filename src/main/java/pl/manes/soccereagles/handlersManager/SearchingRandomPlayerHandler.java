@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersManager;
 
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import java.io.FileNotFoundException;
@@ -19,7 +20,7 @@ public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException, MalformedURLException {
 
         try {
-            if ("randomPlayer".equals(command.getAction())) {
+            if (ActionManager.RANDOM_PLAYER.equals(command.getAction())) {
                 URL randomUser = new URL("https://www.facebook.com/groups/450635788300121");
                 System.out.println(randomUser.toString());
 

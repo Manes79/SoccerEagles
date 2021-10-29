@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.handlersManager;
 
 import org.junit.jupiter.api.Test;
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +16,6 @@ class QuitManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("quit", masterManagerCommand.getCommand());
-        assertEquals("quit", masterManagerCommand.getAction());
+        assertEquals(ActionManager.QUIT, masterManagerCommand.getAction());
     }
 }
