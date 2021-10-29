@@ -27,13 +27,13 @@ public class DeclinedUserEventHandler extends BasicCommandUserHandler {
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 System.out.println("The User declined the invitation to the event");
                 String declinedName = command.getTypedCommand().get(0);
                 declinedUserEventDao.addAll(new DeclinedEvent(declinedName));
                 break;
 
-            case "list":
+            case LIST:
                 System.out.println("List of users who declined an invitation to the event");
                 List<DeclinedEvent> declinedEvents = declinedUserEventDao.findAllDeclinedEventCategories();
                 declinedEvents.forEach(System.out::println);

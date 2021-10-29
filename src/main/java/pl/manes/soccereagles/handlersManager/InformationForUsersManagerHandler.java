@@ -27,13 +27,13 @@ public class InformationForUsersManagerHandler extends BasicCommandManagerHandle
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 String infoForUser = command.getTypedCommand().get(0);
                 informationForUsersManagerDao.addAll(new InformationForUser(infoForUser));
                 System.out.println("Announcement");
                 break;
 
-            case "list":
+            case LIST:
                 List<InformationForUser> informationForUser = informationForUsersManagerDao.findAllInformationForUserManagerCategories();
                 informationForUser.forEach(System.out::println);
                 break;

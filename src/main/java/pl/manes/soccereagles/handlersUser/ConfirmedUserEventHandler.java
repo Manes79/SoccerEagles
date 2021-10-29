@@ -27,13 +27,13 @@ public class ConfirmedUserEventHandler extends BasicCommandUserHandler {
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 System.out.println("A new user has been added to event");
                 String confirmingName = command.getTypedCommand().get(0);
                 confirmedUserEventDao.addAll(new ConfirmedEvent(confirmingName));
                 break;
 
-            case "list":
+            case LIST:
                 System.out.println("List of confirmed Users");
                 List<ConfirmedEvent> confirmedEvent = confirmedUserEventDao.findAllConfirmedEventCategories();
                 confirmedEvent.forEach(System.out::println);

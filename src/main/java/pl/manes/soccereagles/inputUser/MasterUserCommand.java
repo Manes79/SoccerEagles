@@ -1,5 +1,7 @@
 package pl.manes.soccereagles.inputUser;
 
+import pl.manes.soccereagles.ActionUser;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +10,7 @@ public class MasterUserCommand {
 
     private String command;
 
-    private String action;
+    private ActionUser action;
 
     private List<String> typedCommand;
 
@@ -22,7 +24,7 @@ public class MasterUserCommand {
             }
 
             if (arrayUser.length > 1) {
-                action = arrayUser[1];
+                action = ActionUser.of(arrayUser[1]);
             }
 
             typedCommand = new ArrayList<>();
@@ -35,7 +37,7 @@ public class MasterUserCommand {
         return command;
     }
 
-    public String getAction() {
+    public ActionUser getAction() {
         return action;
     }
 

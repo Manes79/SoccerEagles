@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersManager;
 
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 public class HelpManagerHandler extends BasicCommandManagerHandler {
@@ -16,11 +17,11 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
 
         Object action = command.getAction();
 
-        if ("help".equals(action)) {
+        if (ActionManager.HELP.equals(action)) {
             System.out.println("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, randomPlayer, resetEvent");
-        } else if ("add".equals(action)) {
+        } else if (ActionManager.ADD.equals(action)) {
             System.out.println("Add some category");
-        } else if ("list".equals(action)) {
+        } else if (ActionManager.LIST.equals(action)) {
             System.out.println("Displays a list of added events, decisions about events and questions from Users");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
