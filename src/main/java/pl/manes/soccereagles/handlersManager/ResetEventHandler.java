@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersManager;
 
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import java.io.FileNotFoundException;
@@ -19,7 +20,7 @@ public class ResetEventHandler extends BasicCommandManagerHandler {
     @Override
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
 
-        if ("reset".equals(command.getAction())) {
+        if (ActionManager.RESET.equals(command.getAction())) {
             System.out.println("The Event has been reset");
 
             try {

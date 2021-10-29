@@ -20,7 +20,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
 
         switch (command.getAction()) {
 
-            case "eventStatus":
+            case EVENT_STATUS:
                 String statusEvent = "decision.txt";
                 File statusFile = new File(statusEvent);
                 Scanner statusScanner = new Scanner(statusFile);
@@ -35,7 +35,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                 statusScanner.close();
                 break;
 
-            case "list":
+            case LIST:
                 String listEvent = "event.txt.";
                 File listFile = new File(listEvent);
                 Scanner listScanner = new Scanner(listFile);

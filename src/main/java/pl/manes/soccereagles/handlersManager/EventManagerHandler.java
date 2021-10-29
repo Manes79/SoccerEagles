@@ -30,19 +30,19 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 System.out.println("A new event has been added ");
                 String event = command.getTypedCommand().get(0);
                 eventManagerDao.addAll(new EventManager(event));
                 break;
 
-            case "list":
+            case LIST:
                 System.out.println("List of events");
                 List<EventManager> eventManager = eventManagerDao.findAllEventManagerCategories();
                 eventManager.forEach(System.out::println);
                 break;
 
-            case "statusConfirmed":
+            case STATUS_CONFIRMED:
                 String confirmUsers = "confirm.txt";
                 File fileConfirm = new File(confirmUsers);
                 Scanner scannerConfirm = new Scanner(fileConfirm);
@@ -57,7 +57,7 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 scannerConfirm.close();
                 break;
 
-            case "statusDeclined":
+            case STATUS_DECLINED:
                 String declinedUsers = "declined.txt";
                 File fileDeclined = new File(declinedUsers);
                 Scanner scannerDeclined = new Scanner(fileDeclined);

@@ -28,13 +28,13 @@ public class QuestionsFromUsersToManagerHandler extends BasicCommandUserHandler 
 
         switch (command.getAction()) {
 
-            case "add":
+            case ADD:
                 System.out.println("A new question from user to Manager");
                 String questionName = command.getTypedCommand().get(0);
                 questionsFromUsersToManagerDao.addAll(new QuestionToManager(questionName));
                 break;
 
-            case "list":
+            case LIST:
                 System.out.println("List of questions asked to the manager");
                 List<QuestionToManager> questionToManager = questionsFromUsersToManagerDao.findAllQuestionToManagerCategories();
                 questionToManager.forEach(System.out::println);

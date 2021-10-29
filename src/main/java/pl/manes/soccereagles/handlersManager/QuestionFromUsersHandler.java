@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersManager;
 
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import java.io.File;
@@ -18,7 +19,7 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
     @Override
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
 
-        if ("fromUsers".equals(command.getAction())) {
+        if (ActionManager.FROM_USERS.equals(command.getAction())) {
             String userQuestion = "questionToManager.txt";
             File questionFile = new File(userQuestion);
             Scanner questionScanner = new Scanner(questionFile);

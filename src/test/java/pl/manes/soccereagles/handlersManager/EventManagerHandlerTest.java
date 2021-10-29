@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.handlersManager;
 
 import org.junit.jupiter.api.Test;
+import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
 import java.util.List;
@@ -17,7 +18,7 @@ class EventManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("event", masterManagerCommand.getCommand());
-        assertEquals("add", masterManagerCommand.getAction());
+        assertEquals(ActionManager.ADD, masterManagerCommand.getAction());
         assertEquals(List.of("event"), masterManagerCommand.getTypedCommand());
     }
 
@@ -29,7 +30,7 @@ class EventManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("event", masterManagerCommand.getCommand());
-        assertEquals("list", masterManagerCommand.getAction());
+        assertEquals(ActionManager.LIST, masterManagerCommand.getAction());
     }
 
     @Test
@@ -40,7 +41,7 @@ class EventManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("event", masterManagerCommand.getCommand());
-        assertEquals("statusConfirmed", masterManagerCommand.getAction());
+        assertEquals(ActionManager.STATUS_CONFIRMED, masterManagerCommand.getAction());
     }
 
     @Test
@@ -51,6 +52,6 @@ class EventManagerHandlerTest {
         MasterManagerCommand masterManagerCommand = new MasterManagerCommand(inputData);
         //then
         assertEquals("event", masterManagerCommand.getCommand());
-        assertEquals("statusDeclined", masterManagerCommand.getAction());
+        assertEquals(ActionManager.STATUS_DECLINED, masterManagerCommand.getAction());
     }
 }

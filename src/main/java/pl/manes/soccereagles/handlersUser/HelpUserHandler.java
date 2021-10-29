@@ -1,5 +1,6 @@
 package pl.manes.soccereagles.handlersUser;
 
+import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputUser.MasterUserCommand;
 
 public class HelpUserHandler extends BasicCommandUserHandler {
@@ -16,11 +17,11 @@ public class HelpUserHandler extends BasicCommandUserHandler {
 
         Object action = command.getAction();
 
-        if ("help".equals(action)) {
+        if (ActionUser.HELP.equals(action)) {
             System.out.println("Available commands: add, list, confirm, declined, event, eventStatus, infoFromManager, announcement, questionTo");
-        } else if ("add".equals(action)) {
+        } else if (ActionUser.ADD.equals(action)) {
             System.out.println("Add some category");
-        } else if ("list".equals(action)) {
+        } else if (ActionUser.LIST.equals(action)) {
             System.out.println("Displaying confirmations and rejections of the User's decision, event status and information from Event Manager");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
