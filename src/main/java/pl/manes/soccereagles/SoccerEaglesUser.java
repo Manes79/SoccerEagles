@@ -33,9 +33,6 @@ public class SoccerEaglesUser {
         userHandlers.add(new InformationForUsersHandler());
         userHandlers.add(new QuestionsFromUsersToManagerHandler());
 
-        //todo
-        // loggin into the app
-
         while (beginUser) {
             try {
                 MasterUserCommand masterUserCommand = masterUserData.anotherCommand();
