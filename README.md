@@ -5,7 +5,7 @@ a simple application that allows you to manage an event, in this case a football
 divided into section Manager and Users;
 
 Event manager permissions:
-- assuming the date of the event;
+- creating an event date;
 - setting up an event venue;
 - if certain assumptions are met, making decisions about holding an event or canceling an event;
 - the ability to view users who have confirmed participation;
@@ -30,8 +30,8 @@ prosta aplikacja pozwalająca na zarządzanie wydarzeniem, w tym przypadku mecze
 podzielona na sekcję Menedżera i Użytkowników;
 
 Menadżer wydarzenia posiada poniższe uprawnienia:
-- założenie daty eventu;
-- założenie miejsca eventu;
+- utworzenie daty eventu;
+- utworzenie miejsca eventu;
 - w przypadku spełnienia określonych założeń podejmowanie decyzji o odbyciu się eventu lub o anulowaniu eventu;
 - możliwość przeglądania użytkowników, którzy potwierdzili udział;
 - możliwość przeglądania użytkowników, którzy nie wezmą udziału w wydarzeniu;
