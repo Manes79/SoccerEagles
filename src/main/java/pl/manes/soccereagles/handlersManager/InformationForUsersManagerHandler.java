@@ -5,8 +5,11 @@ import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 import pl.manes.soccereagles.structureManager.InformationForUser;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class InformationForUsersManagerHandler extends BasicCommandManagerHandler {
+
+    private static final Logger LOG = Logger.getLogger(InformationForUsersManagerHandler.COMMAND_NAME);
 
     private static final String COMMAND_NAME = "infoForUsers";
 
@@ -30,7 +33,7 @@ public class InformationForUsersManagerHandler extends BasicCommandManagerHandle
             case ADD:
                 String infoForUser = command.getTypedCommand().get(0);
                 informationForUsersManagerDao.addAll(new InformationForUser(infoForUser));
-                System.out.println("Announcement");
+                LOG.info("Announcement");
                 break;
 
             case LIST:

@@ -5,8 +5,11 @@ import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 import pl.manes.soccereagles.structureManager.DateEventManager;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DateEventManagerHandler extends BasicCommandManagerHandler {
+
+    private static final Logger LOG = Logger.getLogger(DateEventManagerHandler.COMMAND_NAME);
 
     private static final String COMMAND_NAME = "dateEvent";
 
@@ -30,7 +33,7 @@ public class DateEventManagerHandler extends BasicCommandManagerHandler {
             case ADD:
                 String eventDate = command.getTypedCommand().get(0);
                 dateEventManagerDao.addAll(new DateEventManager(eventDate));
-                System.out.println("A new data for event has been added ");
+                LOG.info("A new data for event has been added ");
                 break;
 
             case LIST:

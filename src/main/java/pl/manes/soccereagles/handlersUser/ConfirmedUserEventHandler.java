@@ -5,8 +5,11 @@ import pl.manes.soccereagles.inputUser.MasterUserCommand;
 import pl.manes.soccereagles.structureUser.ConfirmedEvent;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ConfirmedUserEventHandler extends BasicCommandUserHandler {
+
+    private final static Logger LOG = Logger.getLogger(ConfirmedUserEventHandler.COMMAND_NAME);
 
     private final static String COMMAND_NAME = "confirm";
 
@@ -28,13 +31,13 @@ public class ConfirmedUserEventHandler extends BasicCommandUserHandler {
         switch (command.getAction()) {
 
             case ADD:
-                System.out.println("A new user has been added to event");
+                LOG.info("A new user has been added to event");
                 String confirmingName = command.getTypedCommand().get(0);
                 confirmedUserEventDao.addAll(new ConfirmedEvent(confirmingName));
                 break;
 
             case LIST:
-                System.out.println("List of confirmed Users");
+                LOG.info("List of confirmed Users");
                 List<ConfirmedEvent> confirmedEvent = confirmedUserEventDao.findAllConfirmedEventCategories();
                 confirmedEvent.forEach(System.out::println);
                 break;

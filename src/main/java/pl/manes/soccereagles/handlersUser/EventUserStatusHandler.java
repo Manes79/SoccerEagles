@@ -5,8 +5,11 @@ import pl.manes.soccereagles.inputUser.MasterUserCommand;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class EventUserStatusHandler extends BasicCommandUserHandler {
+
+    private final static Logger LOG = Logger.getLogger(EventUserStatusHandler.COMMAND_NAME);
 
     private final static String COMMAND_NAME = "event";
 
@@ -28,7 +31,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                 int statusLines = 0;
                 while (statusScanner.hasNextLine()) {
                     String statusName = statusScanner.nextLine();
-                    System.out.println(statusName);
+                    LOG.info(statusName);
                     statusLines++;
                 }
 
@@ -43,7 +46,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                 int listLines = 0;
                 while (listScanner.hasNextLine()) {
                     String listStatus = listScanner.nextLine();
-                    System.out.println(listStatus);
+                    LOG.info(listStatus);
                     listLines++;
                 }
 

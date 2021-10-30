@@ -7,6 +7,7 @@ import pl.manes.soccereagles.inputManager.MasterManagerData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class SoccerEaglesManager {
 
@@ -15,15 +16,17 @@ public class SoccerEaglesManager {
         new SoccerEaglesManager().beginManager();
     }
 
+    private static final Logger LOG = Logger.getLogger(SoccerEaglesManager.class.getName());
+
     private void beginManager() {
 
         boolean beginManager = true;
 
         MasterManagerData masterManagerData = new MasterManagerData();
 
-        System.out.println("Start Soccer Eagles Manager app");
-        System.out.println("Enter the command help help for available options");
-        System.out.println("Enter the command quit quit for close the app");
+        LOG.info("Start Soccer Eagles Manager app");
+        LOG.info("Enter the command help help for available options");
+        LOG.info("Enter the command quit quit for close the app");
 
         List<MasterManagerHandler> managerHandlers = new ArrayList<>();
         managerHandlers.add(new HelpManagerHandler());
@@ -36,10 +39,13 @@ public class SoccerEaglesManager {
         managerHandlers.add(new ResetEventHandler());
         managerHandlers.add(new SearchingRandomPlayerHandler());
 
+        //todo
+        // logging into the app
+
         while (beginManager) {
             try {
                 MasterManagerCommand masterManagerCommand = masterManagerData.anotherCommand();
-                System.out.println(masterManagerCommand);
+                LOG.info(String.valueOf(masterManagerCommand));
 
                 Optional<MasterManagerHandler> timelyHandler = Optional.empty();
                 for (MasterManagerHandler masterManagerHandler : managerHandlers) {
@@ -54,7 +60,7 @@ public class SoccerEaglesManager {
                         .interceptionsManager(masterManagerCommand);
 
             } catch (QuitSoccerEaglesAppException e) {
-                System.out.println("Quit...");
+                LOG.info("Quit...");
                 beginManager = false;
 
             } catch (Exception e) {

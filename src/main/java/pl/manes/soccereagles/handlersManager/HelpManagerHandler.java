@@ -3,7 +3,11 @@ package pl.manes.soccereagles.handlersManager;
 import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 
+import java.util.logging.Logger;
+
 public class HelpManagerHandler extends BasicCommandManagerHandler {
+
+    private static final Logger LOG = Logger.getLogger(HelpManagerHandler.COMMAND_NAME);
 
     private static final String COMMAND_NAME = "help";
 
@@ -18,11 +22,11 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
         Object action = command.getAction();
 
         if (ActionManager.HELP.equals(action)) {
-            System.out.println("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, randomPlayer, resetEvent");
+            LOG.info("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, randomPlayer, resetEvent");
         } else if (ActionManager.ADD.equals(action)) {
-            System.out.println("Add some category");
+            LOG.info("Add some category");
         } else if (ActionManager.LIST.equals(action)) {
-            System.out.println("Displays a list of added events, decisions about events and questions from Users");
+            LOG.info("Displays a list of added events, decisions about events and questions from Users");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
     }

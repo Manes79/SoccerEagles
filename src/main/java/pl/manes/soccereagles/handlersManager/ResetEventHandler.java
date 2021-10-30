@@ -7,8 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.logging.Logger;
 
 public class ResetEventHandler extends BasicCommandManagerHandler {
+
+    private final static Logger LOG = Logger.getLogger(ResetEventHandler.COMMAND_NAME);
 
     private final static String COMMAND_NAME = "resetEvent";
 
@@ -21,7 +24,7 @@ public class ResetEventHandler extends BasicCommandManagerHandler {
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
 
         if (ActionManager.RESET.equals(command.getAction())) {
-            System.out.println("The Event has been reset");
+            LOG.info("The Event has been reset");
 
             try {
                 Files.writeString(Paths.get("./event.txt"), String.join("" + "\n"));

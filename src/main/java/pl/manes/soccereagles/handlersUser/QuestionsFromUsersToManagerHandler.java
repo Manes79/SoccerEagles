@@ -6,8 +6,11 @@ import pl.manes.soccereagles.structureUser.QuestionToManager;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class QuestionsFromUsersToManagerHandler extends BasicCommandUserHandler {
+
+    private final static Logger LOG = Logger.getLogger(QuestionsFromUsersToManagerHandler.COMMAND_NAME);
 
     private final static String COMMAND_NAME = "questionTo";
 
@@ -29,13 +32,13 @@ public class QuestionsFromUsersToManagerHandler extends BasicCommandUserHandler 
         switch (command.getAction()) {
 
             case ADD:
-                System.out.println("A new question from user to Manager");
+                LOG.info("A new question from user to Manager");
                 String questionName = command.getTypedCommand().get(0);
                 questionsFromUsersToManagerDao.addAll(new QuestionToManager(questionName));
                 break;
 
             case LIST:
-                System.out.println("List of questions asked to the manager");
+                LOG.info("List of questions asked to the manager");
                 List<QuestionToManager> questionToManager = questionsFromUsersToManagerDao.findAllQuestionToManagerCategories();
                 questionToManager.forEach(System.out::println);
                 break;

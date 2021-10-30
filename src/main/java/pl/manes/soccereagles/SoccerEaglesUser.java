@@ -7,6 +7,7 @@ import pl.manes.soccereagles.inputUser.MasterUserData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 public class SoccerEaglesUser {
     public static void main(String[] args) {
@@ -14,15 +15,17 @@ public class SoccerEaglesUser {
         new SoccerEaglesUser().beginUser();
     }
 
+    private static final Logger LOG = Logger.getLogger(SoccerEaglesUser.class.getName());
+
     private void beginUser() {
 
         boolean beginUser = true;
 
         MasterUserData masterUserData = new MasterUserData();
 
-        System.out.println("Start Soccer Eagles User app");
-        System.out.println("Enter the command help help for available options");
-        System.out.println("Enter the command quit quit for close the app");
+        LOG.info("Start Soccer Eagles User app");
+        LOG.info("Enter the command help help for available options");
+        LOG.info("Enter the command quit quit for close the app");
 
         List<MasterUserHandler> userHandlers = new ArrayList<>();
         userHandlers.add(new HelpUserHandler());
@@ -33,10 +36,13 @@ public class SoccerEaglesUser {
         userHandlers.add(new InformationForUsersHandler());
         userHandlers.add(new QuestionsFromUsersToManagerHandler());
 
+        //todo
+        // logging into the app
+
         while (beginUser) {
             try {
                 MasterUserCommand masterUserCommand = masterUserData.anotherCommand();
-                System.out.println(masterUserCommand);
+                LOG.info(String.valueOf(masterUserCommand));
 
                 Optional<MasterUserHandler> timelyHandler = Optional.empty();
                 for (MasterUserHandler masterUserHandler : userHandlers) {
@@ -51,7 +57,7 @@ public class SoccerEaglesUser {
                         .interceptionUser(masterUserCommand);
 
             } catch (QuitSoccerEaglesAppException e) {
-                System.out.println("Quit...");
+                LOG.info("Quit...");
                 beginUser = false;
 
 
