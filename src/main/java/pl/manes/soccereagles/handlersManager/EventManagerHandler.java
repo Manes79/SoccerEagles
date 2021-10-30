@@ -8,8 +8,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class EventManagerHandler extends BasicCommandManagerHandler {
+
+    private static final Logger LOG = Logger.getLogger(EventManagerHandler.COMMAND_NAME);
 
     private static final String COMMAND_NAME = "event";
 
@@ -31,13 +34,13 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
         switch (command.getAction()) {
 
             case ADD:
-                System.out.println("A new event has been added ");
+                LOG.info("A new event has been added ");
                 String event = command.getTypedCommand().get(0);
                 eventManagerDao.addAll(new EventManager(event));
                 break;
 
             case LIST:
-                System.out.println("List of events");
+                LOG.info("List of events");
                 List<EventManager> eventManager = eventManagerDao.findAllEventManagerCategories();
                 eventManager.forEach(System.out::println);
                 break;
@@ -49,10 +52,10 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 int linesConfirm = 0;
                 while (scannerConfirm.hasNextLine()) {
                     String nameConfirm = scannerConfirm.nextLine();
-                    System.out.println(nameConfirm);
+                    LOG.info(nameConfirm);
                     linesConfirm++;
                 }
-                System.out.println("Number of confirmed users " + linesConfirm);
+                LOG.info("Number of confirmed users " + linesConfirm);
 
                 scannerConfirm.close();
                 break;
@@ -64,10 +67,10 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 int linesDeclined = 0;
                 while (scannerDeclined.hasNextLine()) {
                     String nameDeclined = scannerDeclined.nextLine();
-                    System.out.println(nameDeclined);
+                    LOG.info(nameDeclined);
                     linesDeclined++;
                 }
-                System.out.println("Number of users declining an invitation to the event " + linesDeclined);
+                LOG.info("Number of users declining an invitation to the event " + linesDeclined);
 
                 scannerDeclined.close();
                 break;

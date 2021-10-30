@@ -5,8 +5,11 @@ import pl.manes.soccereagles.inputUser.MasterUserCommand;
 import pl.manes.soccereagles.structureUser.DeclinedEvent;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DeclinedUserEventHandler extends BasicCommandUserHandler {
+
+    private final static Logger LOG = Logger.getLogger(DeclinedUserEventHandler.COMMAND_NAME);
 
     private final static String COMMAND_NAME = "declined";
 
@@ -28,13 +31,13 @@ public class DeclinedUserEventHandler extends BasicCommandUserHandler {
         switch (command.getAction()) {
 
             case ADD:
-                System.out.println("The User declined the invitation to the event");
+                LOG.info("The User declined the invitation to the event");
                 String declinedName = command.getTypedCommand().get(0);
                 declinedUserEventDao.addAll(new DeclinedEvent(declinedName));
                 break;
 
             case LIST:
-                System.out.println("List of users who declined an invitation to the event");
+                LOG.info("List of users who declined an invitation to the event");
                 List<DeclinedEvent> declinedEvents = declinedUserEventDao.findAllDeclinedEventCategories();
                 declinedEvents.forEach(System.out::println);
                 break;

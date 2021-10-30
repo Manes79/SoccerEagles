@@ -6,8 +6,11 @@ import pl.manes.soccereagles.inputManager.MasterManagerCommand;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Logger;
 
 public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
+
+    private static final Logger LOG = Logger.getLogger(SearchingRandomPlayerHandler.COMMAND_NAME);
 
     private static final String COMMAND_NAME = "randomPlayer";
 
@@ -22,7 +25,7 @@ public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
         try {
             if (ActionManager.RANDOM_PLAYER.equals(command.getAction())) {
                 URL randomUser = new URL("https://www.facebook.com/groups/450635788300121");
-                System.out.println(randomUser.toString());
+                LOG.info(randomUser.toString());
 
             }
         } catch (MalformedURLException e) {
