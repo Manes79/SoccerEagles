@@ -36,6 +36,9 @@ public class SoccerEaglesManager {
         managerHandlers.add(new ResetEventHandler());
         managerHandlers.add(new SearchingRandomPlayerHandler());
 
+        //todo
+        // logging into the app
+
         while (beginManager) {
             try {
                 MasterManagerCommand masterManagerCommand = masterManagerData.anotherCommand();
