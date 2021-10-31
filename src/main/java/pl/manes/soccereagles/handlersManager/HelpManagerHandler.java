@@ -22,11 +22,11 @@ public class HelpManagerHandler extends BasicCommandManagerHandler {
         Object action = command.getAction();
 
         if (ActionManager.HELP.equals(action)) {
-            LOG.info("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, randomPlayer, resetEvent");
+            System.out.println("Available command: event, dateEvent, statusConfirmed, statusDeclined, decision, infoForUsers, question fromUsers, randomPlayer, resetEvent");
         } else if (ActionManager.ADD.equals(action)) {
-            LOG.info("Add some category");
+            System.out.println("Add some category");
         } else if (ActionManager.LIST.equals(action)) {
-            LOG.info("Displays a list of added events, decisions about events and questions from Users");
+            System.out.println("Displays a list of added events, decisions about events and questions from Users");
         } else
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
     }

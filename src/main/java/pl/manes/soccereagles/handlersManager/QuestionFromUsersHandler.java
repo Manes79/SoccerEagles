@@ -30,7 +30,7 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
             int questionLines = 0;
             while (questionScanner.hasNextLine()) {
                 String questionName = questionScanner.nextLine();
-                LOG.info(questionName);
+                System.out.println(questionName);
                 questionLines++;
             }
 

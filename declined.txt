@@ -1,7 +1,7 @@
-Irek      
-Mirek     
-Piotrek    
-Marek"Malta"   
-Bambuła  
-Patryk 
-Dawid
+Jacek"Bambuła"      
+Patryk     
+Dawid    
+Zbyszek   
+Irek  
+Mirek 
+Marek"Malta"

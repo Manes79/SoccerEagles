@@ -25,7 +25,7 @@ public class SoccerEaglesManager {
         MasterManagerData masterManagerData = new MasterManagerData();
 
         LOG.info("Start Soccer Eagles Manager app");
-        LOG.info("Enter the command help help for available options");
+        LOG.info("Enter the command help help/add/list for available options");
         LOG.info("Enter the command quit quit for close the app");
 
         List<MasterManagerHandler> managerHandlers = new ArrayList<>();

@@ -31,7 +31,7 @@ public class DateEventManagerDao {
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));
             readAllLines.add(dateEventManager.getEventDate());
 
-            Files.writeString(Paths.get("./event.txt"), String.join(" ", readAllLines));
+            Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
             e.printStackTrace();

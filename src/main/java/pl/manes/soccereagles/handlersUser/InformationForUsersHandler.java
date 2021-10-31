@@ -30,7 +30,7 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
             int infoLines = 0;
             while (infoScanner.hasNextLine()) {
                 String infoName = infoScanner.nextLine();
-                LOG.info(infoName);
+                System.out.println(infoName);
                 infoLines++;
             }
 
