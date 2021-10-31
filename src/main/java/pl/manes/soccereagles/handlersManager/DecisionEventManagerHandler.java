@@ -43,9 +43,9 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
                     linesConfirm++;
                 }
                 if (linesConfirm >= 10)
-                    LOG.info("We play!");
+                    System.out.println("We play!");
                 else
-                    LOG.info("We do not play!");
+                    System.out.println("We do not play!");
 
                 scannerConfirm.close();
                 LOG.info("Number of confirmed users " + linesConfirm);

@@ -24,7 +24,7 @@ public class SoccerEaglesUser {
         MasterUserData masterUserData = new MasterUserData();
 
         LOG.info("Start Soccer Eagles User app");
-        LOG.info("Enter the command help help for available options");
+        LOG.info("Enter the command help help/add/list for available options");
         LOG.info("Enter the command quit quit for close the app");
 
         List<MasterUserHandler> userHandlers = new ArrayList<>();

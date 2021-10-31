@@ -31,7 +31,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                 int statusLines = 0;
                 while (statusScanner.hasNextLine()) {
                     String statusName = statusScanner.nextLine();
-                    LOG.info(statusName);
+                    System.out.println(statusName);
                     statusLines++;
                 }
 
@@ -46,7 +46,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                 int listLines = 0;
                 while (listScanner.hasNextLine()) {
                     String listStatus = listScanner.nextLine();
-                    LOG.info(listStatus);
+                    System.out.println(listStatus);
                     listLines++;
                 }
 

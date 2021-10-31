@@ -52,7 +52,7 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 int linesConfirm = 0;
                 while (scannerConfirm.hasNextLine()) {
                     String nameConfirm = scannerConfirm.nextLine();
-                    LOG.info(nameConfirm);
+                    System.out.println(nameConfirm);
                     linesConfirm++;
                 }
                 LOG.info("Number of confirmed users " + linesConfirm);
@@ -67,7 +67,7 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 int linesDeclined = 0;
                 while (scannerDeclined.hasNextLine()) {
                     String nameDeclined = scannerDeclined.nextLine();
-                    LOG.info(nameDeclined);
+                    System.out.println(nameDeclined);
                     linesDeclined++;
                 }
                 LOG.info("Number of users declining an invitation to the event " + linesDeclined);
