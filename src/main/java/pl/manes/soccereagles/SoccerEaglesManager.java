@@ -1,14 +1,15 @@
 package pl.manes.soccereagles;
 
-import pl.manes.soccereagles.handlersManager.*;
-import pl.manes.soccereagles.inputManager.MasterManagerCommand;
-import pl.manes.soccereagles.inputManager.MasterManagerData;
+import lombok.extern.java.Log;
+import pl.manes.soccereagles.handlersmanager.*;
+import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
+import pl.manes.soccereagles.inputmanager.MasterManagerData;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
+@Log
 public class SoccerEaglesManager {
 
     public static void main(String[] args) {
@@ -16,17 +17,15 @@ public class SoccerEaglesManager {
         new SoccerEaglesManager().beginManager();
     }
 
-    private static final Logger LOG = Logger.getLogger(SoccerEaglesManager.class.getName());
-
     private void beginManager() {
 
         boolean beginManager = true;
 
         MasterManagerData masterManagerData = new MasterManagerData();
 
-        LOG.info("Start Soccer Eagles Manager app");
-        LOG.info("Enter the command help help/add/list for available options");
-        LOG.info("Enter the command quit quit for close the app");
+        log.info("Start Soccer Eagles Manager app");
+        log.info("Enter the command help help/add/list for available options");
+        log.info("Enter the command quit quit for close the app");
 
         List<MasterManagerHandler> managerHandlers = new ArrayList<>();
         managerHandlers.add(new HelpManagerHandler());
@@ -39,13 +38,10 @@ public class SoccerEaglesManager {
         managerHandlers.add(new ResetEventHandler());
         managerHandlers.add(new SearchingRandomPlayerHandler());
 
-        //todo
-        // logging into the app
-
         while (beginManager) {
             try {
                 MasterManagerCommand masterManagerCommand = masterManagerData.anotherCommand();
-                LOG.info(String.valueOf(masterManagerCommand));
+                log.info(String.valueOf(masterManagerCommand));
 
                 Optional<MasterManagerHandler> timelyHandler = Optional.empty();
                 for (MasterManagerHandler masterManagerHandler : managerHandlers) {
@@ -60,7 +56,7 @@ public class SoccerEaglesManager {
                         .interceptionsManager(masterManagerCommand);
 
             } catch (QuitSoccerEaglesAppException e) {
-                LOG.info("Quit...");
+                log.info("Quit...");
                 beginManager = false;
 
             } catch (Exception e) {
