@@ -23,7 +23,7 @@ public class InformationForUsersManagerHandler extends BasicCommandManagerHandle
     }
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 

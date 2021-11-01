@@ -17,7 +17,7 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
     private final static String COMMAND_NAME = "event";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -27,34 +27,40 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
         switch (command.getAction()) {
 
             case EVENT_STATUS:
-                String statusEvent = "./decision.txt";
-                File statusFile = new File(statusEvent);
-                Scanner statusScanner = new Scanner(statusFile);
+                try {
+                    String statusEvent = "./decision.txt";
+                    File statusFile = new File(statusEvent);
+                    Scanner statusScanner = new Scanner(statusFile);
 
-                int statusLines = 0;
-                while (statusScanner.hasNextLine()) {
-                    String statusName = statusScanner.nextLine();
-                    System.out.println(statusName);
-                    statusLines++;
+                    int statusLines = 0;
+                    while (statusScanner.hasNextLine()) {
+                        String statusName = statusScanner.nextLine();
+                        System.out.println(statusName);
+                        statusLines++;
+                    }
+                    break;
+                } catch (IllegalArgumentException e) {
+                    log.info("Potential Warning");
+                    e.printStackTrace();
                 }
-
-                statusScanner.close();
-                break;
 
             case LIST:
-                String listEvent = "./event.txt.";
-                File listFile = new File(listEvent);
-                Scanner listScanner = new Scanner(listFile);
+                try {
+                    String listEvent = "./event.txt.";
+                    File listFile = new File(listEvent);
+                    Scanner listScanner = new Scanner(listFile);
 
-                int listLines = 0;
-                while (listScanner.hasNextLine()) {
-                    String listStatus = listScanner.nextLine();
-                    System.out.println(listStatus);
-                    listLines++;
+                    int listLines = 0;
+                    while (listScanner.hasNextLine()) {
+                        String listStatus = listScanner.nextLine();
+                        System.out.println(listStatus);
+                        listLines++;
+                    }
+                    break;
+                } catch (IllegalArgumentException e) {
+                    log.info("Potential Warning");
+                    e.printStackTrace();
                 }
-
-                listScanner.close();
-                break;
 
             default: {
                 throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));

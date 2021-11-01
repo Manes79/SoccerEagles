@@ -8,7 +8,7 @@ public class QuitUserHandler extends BasicCommandUserHandler {
     private static final String COMMAND_NAME = "quit";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 

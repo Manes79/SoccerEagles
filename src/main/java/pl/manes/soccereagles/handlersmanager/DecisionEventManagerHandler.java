@@ -26,7 +26,7 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -36,25 +36,28 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
         switch (command.getAction()) {
 
             case DECISION:
-                String confirmUsers = "./confirm.txt";
-                File confirmFile = new File(confirmUsers);
-                Scanner scannerConfirm = new Scanner(confirmFile);
-                int linesConfirm = 0;
-                while (scannerConfirm.hasNextLine()) {
-                    String nameConfirm = scannerConfirm.nextLine();
-                    linesConfirm++;
-                }
-                if (linesConfirm >= 10)
-                    System.out.println("We play!");
-                else
-                    System.out.println("We do not play!");
+                try {
+                    String confirmUsers = "./confirm.txt";
+                    File confirmFile = new File(confirmUsers);
+                    Scanner scannerConfirm = new Scanner(confirmFile);
+                    int linesConfirm = 0;
+                    while (scannerConfirm.hasNextLine()) {
+                        String nameConfirm = scannerConfirm.nextLine();
+                        linesConfirm++;
+                    }
+                    if (linesConfirm >= 10)
+                        System.out.println("We play!");
+                    else
+                        System.out.println("We do not play!");
 
-                scannerConfirm.close();
-                log.info("Number of confirmed users " + linesConfirm);
-                break;
+                    log.info("Number of confirmed users " + linesConfirm);
+                    break;
+                } catch (IllegalArgumentException e) {
+                    log.info("Potential Warning");
+                    e.printStackTrace();
+                }
 
             case ADD:
-
                 String decisionEvent = command.getTypedCommand().get(0);
                 decisionEventManagerDao.addAll(new ManagerDecisionEvent(decisionEvent));
                 log.info("A new event decision has been added");
@@ -65,6 +68,9 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
                 managerDecisionEvents.forEach(System.out::println);
                 break;
 
+            default: {
+                throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));
+            }
         }
     }
 }

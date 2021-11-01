@@ -18,7 +18,7 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
     private static final String COMMAND_NAME = "question";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -26,18 +26,21 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
     public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
 
         if (ActionManager.FROM_USERS.equals(command.getAction())) {
-            String userQuestion = "./questionToManager.txt";
-            File questionFile = new File(userQuestion);
-            Scanner questionScanner = new Scanner(questionFile);
+            try {
+                String userQuestion = "./questionToManager.txt";
+                File questionFile = new File(userQuestion);
+                Scanner questionScanner = new Scanner(questionFile);
 
-            int questionLines = 0;
-            while (questionScanner.hasNextLine()) {
-                String questionName = questionScanner.nextLine();
-                System.out.println(questionName);
-                questionLines++;
+                int questionLines = 0;
+                while (questionScanner.hasNextLine()) {
+                    String questionName = questionScanner.nextLine();
+                    System.out.println(questionName);
+                    questionLines++;
+                }
+            } catch (IllegalArgumentException e) {
+                log.info("Potential Warning");
+                e.printStackTrace();
             }
-
-            questionScanner.close();
 
         } else {
             throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));

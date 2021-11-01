@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 import pl.manes.soccereagles.structureuser.ConfirmedEvent;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Log
 public class ConfirmedUserEventDao {
 
     public List<ConfirmedEvent> findAllConfirmedEventCategories() {
@@ -19,7 +21,6 @@ public class ConfirmedUserEventDao {
             for (String line : readAllLines) {
                 confirmedEvent.add(new ConfirmedEvent(line));
             }
-
             return confirmedEvent;
 
         } catch (IOException e) {
@@ -36,6 +37,7 @@ public class ConfirmedUserEventDao {
             Files.writeString(Paths.get("./confirm.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
         }
     }

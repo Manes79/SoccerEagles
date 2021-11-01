@@ -23,7 +23,7 @@ public class QuestionsFromUsersToManagerHandler extends BasicCommandUserHandler 
     }
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 

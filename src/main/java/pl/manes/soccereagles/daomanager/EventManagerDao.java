@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.daomanager;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 import pl.manes.soccereagles.structuremanager.EventManager;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Log
 public class EventManagerDao {
 
     public List<EventManager> findAllEventManagerCategories() {
@@ -19,7 +21,6 @@ public class EventManagerDao {
             for (String line : readAllLines) {
                 eventManagers.add(new EventManager(line));
             }
-
             return eventManagers;
 
         } catch (IOException e) {
@@ -36,6 +37,7 @@ public class EventManagerDao {
             Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
         }
     }

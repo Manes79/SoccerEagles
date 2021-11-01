@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 import pl.manes.soccereagles.structureuser.QuestionToManager;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Log
 public class QuestionsFromUsersToManagerDao {
 
     public List<QuestionToManager> findAllQuestionToManagerCategories() {
@@ -35,8 +37,8 @@ public class QuestionsFromUsersToManagerDao {
             Files.writeString(Paths.get("./questionToManager.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
-
         }
     }
 }
