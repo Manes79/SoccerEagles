@@ -1,21 +1,21 @@
 package pl.manes.soccereagles;
 
-import pl.manes.soccereagles.handlersUser.*;
-import pl.manes.soccereagles.inputUser.MasterUserCommand;
-import pl.manes.soccereagles.inputUser.MasterUserData;
+import lombok.extern.java.Log;
+import pl.manes.soccereagles.handlersuser.*;
+import pl.manes.soccereagles.inputuser.MasterUserCommand;
+import pl.manes.soccereagles.inputuser.MasterUserData;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
+@Log
 public class SoccerEaglesUser {
+
     public static void main(String[] args) {
 
         new SoccerEaglesUser().beginUser();
     }
-
-    private static final Logger LOG = Logger.getLogger(SoccerEaglesUser.class.getName());
 
     private void beginUser() {
 
@@ -23,9 +23,9 @@ public class SoccerEaglesUser {
 
         MasterUserData masterUserData = new MasterUserData();
 
-        LOG.info("Start Soccer Eagles User app");
-        LOG.info("Enter the command help help/add/list for available options");
-        LOG.info("Enter the command quit quit for close the app");
+        log.info("Start Soccer Eagles User app");
+        log.info("Enter the command help help/add/list for available options");
+        log.info("Enter the command quit quit for close the app");
 
         List<MasterUserHandler> userHandlers = new ArrayList<>();
         userHandlers.add(new HelpUserHandler());
@@ -36,13 +36,10 @@ public class SoccerEaglesUser {
         userHandlers.add(new InformationForUsersHandler());
         userHandlers.add(new QuestionsFromUsersToManagerHandler());
 
-        //todo
-        // logging into the app
-
         while (beginUser) {
             try {
                 MasterUserCommand masterUserCommand = masterUserData.anotherCommand();
-                LOG.info(String.valueOf(masterUserCommand));
+                log.info(String.valueOf(masterUserCommand));
 
                 Optional<MasterUserHandler> timelyHandler = Optional.empty();
                 for (MasterUserHandler masterUserHandler : userHandlers) {
@@ -57,7 +54,7 @@ public class SoccerEaglesUser {
                         .interceptionUser(masterUserCommand);
 
             } catch (QuitSoccerEaglesAppException e) {
-                LOG.info("Quit...");
+                log.info("Quit...");
                 beginUser = false;
 
 
