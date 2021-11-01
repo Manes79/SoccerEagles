@@ -60,6 +60,7 @@ public class SoccerEaglesManager {
                 beginManager = false;
 
             } catch (Exception e) {
+                log.info("Potential Warning");
                 e.printStackTrace();
             }
         }

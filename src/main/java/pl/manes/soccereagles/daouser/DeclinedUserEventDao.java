@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 import pl.manes.soccereagles.structureuser.DeclinedEvent;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Log
 public class DeclinedUserEventDao {
 
     public List<DeclinedEvent> findAllDeclinedEventCategories() {
@@ -19,7 +21,6 @@ public class DeclinedUserEventDao {
             for (String line : readAllLines) {
                 declinedEvents.add(new DeclinedEvent(line));
             }
-
             return declinedEvents;
 
         } catch (IOException e) {
@@ -36,6 +37,7 @@ public class DeclinedUserEventDao {
             Files.writeString(Paths.get("./declined.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
         }
     }

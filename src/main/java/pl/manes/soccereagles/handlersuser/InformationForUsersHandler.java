@@ -6,6 +6,7 @@ import lombok.extern.java.Log;
 import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 
+import javax.imageio.IIOException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
     private final static String COMMAND_NAME = "infoFromManager";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -26,19 +27,21 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
     public void interceptionUser(MasterUserCommand command) throws FileNotFoundException {
 
         if (ActionUser.ANNOUNCEMENT.equals(command.getAction())) {
-            String infoFromMenago = "./information.txt";
-            File infoFile = new File(infoFromMenago);
-            Scanner infoScanner = new Scanner(infoFile);
+            try {
+                String infoFromMenago = "./information.txt";
+                File infoFile = new File(infoFromMenago);
+                Scanner infoScanner = new Scanner(infoFile);
 
-            int infoLines = 0;
-            while (infoScanner.hasNextLine()) {
-                String infoName = infoScanner.nextLine();
-                System.out.println(infoName);
-                infoLines++;
+                int infoLines = 0;
+                while (infoScanner.hasNextLine()) {
+                    String infoName = infoScanner.nextLine();
+                    System.out.println(infoName);
+                    infoLines++;
+                }
+            } catch (IllegalArgumentException e){
+                log.info("Potential Warning");
+                e.printStackTrace();
             }
-
-            infoScanner.close();
-
         }
     }
 }

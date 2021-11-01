@@ -7,5 +7,5 @@ abstract class BasicCommandUserHandler implements MasterUserHandler {
         return getCommandName().equals(name);
     }
 
-    protected abstract Object getCommandName();
+    protected abstract String getCommandName();
 }

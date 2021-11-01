@@ -18,7 +18,7 @@ public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
     private static final String COMMAND_NAME = "randomPlayer";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -32,6 +32,7 @@ public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
 
             }
         } catch (MalformedURLException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
         }
     }

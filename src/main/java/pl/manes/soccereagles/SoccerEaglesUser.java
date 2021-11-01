@@ -59,6 +59,7 @@ public class SoccerEaglesUser {
 
 
             } catch (Exception e) {
+                log.info("Potential Warning");
                 e.printStackTrace();
             }
         }

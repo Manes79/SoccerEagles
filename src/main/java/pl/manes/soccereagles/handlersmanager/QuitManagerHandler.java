@@ -9,7 +9,7 @@ public class QuitManagerHandler extends BasicCommandManagerHandler {
     private static final String COMMAND_NAME = "quit";
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 

@@ -1,6 +1,7 @@
 package pl.manes.soccereagles.daomanager;
 
 import lombok.Data;
+import lombok.extern.java.Log;
 import pl.manes.soccereagles.structuremanager.InformationForUser;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Log
 public class InformationForUsersManagerDao {
 
     public List<InformationForUser> findAllInformationForUserManagerCategories() {
@@ -19,7 +21,6 @@ public class InformationForUsersManagerDao {
             for (String line : readAllLines) {
                 informationForUsers.add(new InformationForUser(line));
             }
-
             return informationForUsers;
 
         } catch (IOException e) {
@@ -36,6 +37,7 @@ public class InformationForUsersManagerDao {
             Files.writeString(Paths.get("./information.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
+            log.info("Potential Warning");
             e.printStackTrace();
         }
     }

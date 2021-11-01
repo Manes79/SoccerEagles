@@ -7,5 +7,5 @@ abstract class BasicCommandManagerHandler implements MasterManagerHandler {
         return getCommandName().equals(name);
     }
 
-    protected abstract Object getCommandName();
+    protected abstract String getCommandName();
 }

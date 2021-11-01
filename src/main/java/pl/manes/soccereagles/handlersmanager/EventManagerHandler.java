@@ -26,7 +26,7 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
@@ -48,34 +48,40 @@ public class EventManagerHandler extends BasicCommandManagerHandler {
                 break;
 
             case STATUS_CONFIRMED:
-                String confirmUsers = "./confirm.txt";
-                File fileConfirm = new File(confirmUsers);
-                Scanner scannerConfirm = new Scanner(fileConfirm);
-                int linesConfirm = 0;
-                while (scannerConfirm.hasNextLine()) {
-                    String nameConfirm = scannerConfirm.nextLine();
-                    System.out.println(nameConfirm);
-                    linesConfirm++;
+                try {
+                    String confirmUsers = "./confirm.txt";
+                    File fileConfirm = new File(confirmUsers);
+                    Scanner scannerConfirm = new Scanner(fileConfirm);
+                    int linesConfirm = 0;
+                    while (scannerConfirm.hasNextLine()) {
+                        String nameConfirm = scannerConfirm.nextLine();
+                        System.out.println(nameConfirm);
+                        linesConfirm++;
+                    }
+                    log.info("Number of confirmed users " + linesConfirm);
+                    break;
+                } catch (IllegalArgumentException e) {
+                    log.info("Potential Warning");
+                    e.printStackTrace();
                 }
-                log.info("Number of confirmed users " + linesConfirm);
-
-                scannerConfirm.close();
-                break;
 
             case STATUS_DECLINED:
-                String declinedUsers = "./declined.txt";
-                File fileDeclined = new File(declinedUsers);
-                Scanner scannerDeclined = new Scanner(fileDeclined);
-                int linesDeclined = 0;
-                while (scannerDeclined.hasNextLine()) {
-                    String nameDeclined = scannerDeclined.nextLine();
-                    System.out.println(nameDeclined);
-                    linesDeclined++;
+                try {
+                    String declinedUsers = "./declined.txt";
+                    File fileDeclined = new File(declinedUsers);
+                    Scanner scannerDeclined = new Scanner(fileDeclined);
+                    int linesDeclined = 0;
+                    while (scannerDeclined.hasNextLine()) {
+                        String nameDeclined = scannerDeclined.nextLine();
+                        System.out.println(nameDeclined);
+                        linesDeclined++;
+                    }
+                    log.info("Number of users declining an invitation to the event " + linesDeclined);
+                    break;
+                } catch (IllegalArgumentException e) {
+                    log.info("Potential Warning");
+                    e.printStackTrace();
                 }
-                log.info("Number of users declining an invitation to the event " + linesDeclined);
-
-                scannerDeclined.close();
-                break;
 
             default: {
                 throw new IllegalArgumentException((String.format("Unknown action: %s from command: %s", command.getAction(), command.getCommand())));

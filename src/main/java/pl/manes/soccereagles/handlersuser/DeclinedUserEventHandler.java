@@ -23,7 +23,7 @@ public class DeclinedUserEventHandler extends BasicCommandUserHandler {
     }
 
     @Override
-    protected Object getCommandName() {
+    protected String getCommandName() {
         return COMMAND_NAME;
     }
 
