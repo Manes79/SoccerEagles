@@ -37,7 +37,7 @@ public class ConfirmedUserEventDao {
             Files.writeString(Paths.get("./confirm.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
-            log.info("Potential Warning");
+            log.info("Wrong command");
             e.printStackTrace();
         }
     }

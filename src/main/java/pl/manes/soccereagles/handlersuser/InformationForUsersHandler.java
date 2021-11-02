@@ -6,9 +6,9 @@ import lombok.extern.java.Log;
 import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 
-import javax.imageio.IIOException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
@@ -38,8 +38,8 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
                     System.out.println(infoName);
                     infoLines++;
                 }
-            } catch (IllegalArgumentException e){
-                log.info("Potential Warning");
+            } catch (IOException e) {
+                log.info("Wrong command");
                 e.printStackTrace();
             }
         }

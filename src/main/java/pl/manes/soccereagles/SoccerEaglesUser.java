@@ -59,7 +59,7 @@ public class SoccerEaglesUser {
 
 
             } catch (Exception e) {
-                log.info("Potential Warning");
+                log.info("Wrong command");
                 e.printStackTrace();
             }
         }

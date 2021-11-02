@@ -7,6 +7,7 @@ import pl.manes.soccereagles.inputuser.MasterUserCommand;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
@@ -39,8 +40,8 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                         statusLines++;
                     }
                     break;
-                } catch (IllegalArgumentException e) {
-                    log.info("Potential Warning");
+                } catch (IOException e) {
+                    log.info("Wrong command");
                     e.printStackTrace();
                 }
 
@@ -57,8 +58,8 @@ public class EventUserStatusHandler extends BasicCommandUserHandler {
                         listLines++;
                     }
                     break;
-                } catch (IllegalArgumentException e) {
-                    log.info("Potential Warning");
+                } catch (IOException e) {
+                    log.info("Wrong command");
                     e.printStackTrace();
                 }
 

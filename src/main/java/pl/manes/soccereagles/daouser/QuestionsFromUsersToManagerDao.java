@@ -37,7 +37,7 @@ public class QuestionsFromUsersToManagerDao {
             Files.writeString(Paths.get("./questionToManager.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
-            log.info("Potential Warning");
+            log.info("Wrong command");
             e.printStackTrace();
         }
     }
