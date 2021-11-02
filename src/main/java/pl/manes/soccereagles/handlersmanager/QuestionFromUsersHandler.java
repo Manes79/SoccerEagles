@@ -8,6 +8,7 @@ import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
@@ -37,8 +38,8 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
                     System.out.println(questionName);
                     questionLines++;
                 }
-            } catch (IllegalArgumentException e) {
-                log.info("Potential Warning");
+            } catch (IOException e) {
+                log.info("Wrong command");
                 e.printStackTrace();
             }
 

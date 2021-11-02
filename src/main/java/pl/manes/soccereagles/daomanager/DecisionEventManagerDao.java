@@ -37,7 +37,7 @@ public class DecisionEventManagerDao {
             Files.writeString(Paths.get("./decision.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
-            log.info("Potential Warning");
+            log.info("Wrong command");
             e.printStackTrace();
         }
     }

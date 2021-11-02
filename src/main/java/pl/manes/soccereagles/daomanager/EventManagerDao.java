@@ -37,7 +37,7 @@ public class EventManagerDao {
             Files.writeString(Paths.get("./event.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
-            log.info("Potential Warning");
+            log.info("Wrong command");
             e.printStackTrace();
         }
     }

@@ -9,6 +9,7 @@ import pl.manes.soccereagles.structuremanager.ManagerDecisionEvent;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,8 +53,8 @@ public class DecisionEventManagerHandler extends BasicCommandManagerHandler {
 
                     log.info("Number of confirmed users " + linesConfirm);
                     break;
-                } catch (IllegalArgumentException e) {
-                    log.info("Potential Warning");
+                } catch (IOException e) {
+                    log.info("Wrong command");
                     e.printStackTrace();
                 }
 

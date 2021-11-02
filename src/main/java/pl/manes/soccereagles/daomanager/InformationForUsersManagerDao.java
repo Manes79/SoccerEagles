@@ -37,7 +37,7 @@ public class InformationForUsersManagerDao {
             Files.writeString(Paths.get("./information.txt"), String.join(" " + "\n", readAllLines));
 
         } catch (IOException e) {
-            log.info("Potential Warning");
+            log.info("Wrong command");
             e.printStackTrace();
         }
     }

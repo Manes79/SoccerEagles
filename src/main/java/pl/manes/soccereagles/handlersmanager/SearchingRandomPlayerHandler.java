@@ -32,7 +32,7 @@ public class SearchingRandomPlayerHandler extends BasicCommandManagerHandler {
 
             }
         } catch (MalformedURLException e) {
-            log.info("Potential Warning");
+            log.info("An invalid URL occurred");
             e.printStackTrace();
         }
     }
