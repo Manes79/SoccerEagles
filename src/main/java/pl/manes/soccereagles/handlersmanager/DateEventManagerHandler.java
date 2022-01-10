@@ -3,6 +3,7 @@ package pl.manes.soccereagles.handlersmanager;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.daomanager.DateEventManagerDao;
 import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
 import pl.manes.soccereagles.structuremanager.DateEventManager;
@@ -28,7 +29,7 @@ public class DateEventManagerHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    public void interceptionsManager(MasterManagerCommand command) {
+    public void interceptionsManager(@NotNull MasterManagerCommand command) {
 
         switch (command.getAction()) {
 

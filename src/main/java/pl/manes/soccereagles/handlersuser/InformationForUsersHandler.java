@@ -3,11 +3,11 @@ package pl.manes.soccereagles.handlersuser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class InformationForUsersHandler extends BasicCommandUserHandler {
     }
 
     @Override
-    public void interceptionUser(MasterUserCommand command) throws FileNotFoundException {
+    public void interceptionUser(@NotNull MasterUserCommand command) {
 
         if (ActionUser.ANNOUNCEMENT.equals(command.getAction())) {
             try {

@@ -3,11 +3,11 @@ package pl.manes.soccereagles.handlersmanager;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class QuestionFromUsersHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
+    public void interceptionsManager(@NotNull MasterManagerCommand command) {
 
         if (ActionManager.FROM_USERS.equals(command.getAction())) {
             try {

@@ -2,6 +2,7 @@ package pl.manes.soccereagles.daomanager;
 
 import lombok.Data;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.structuremanager.EventManager;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class EventManagerDao {
         }
     }
 
-    public void addAll(EventManager eventManager) {
+    public void addAll(@NotNull EventManager eventManager) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./event.txt"));
             readAllLines.add(eventManager.getEvent());

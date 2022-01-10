@@ -2,6 +2,7 @@ package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.structureuser.DeclinedEvent;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class DeclinedUserEventDao {
         }
     }
 
-    public void addAll(DeclinedEvent confirmedEvent) {
+    public void addAll(@NotNull DeclinedEvent confirmedEvent) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./declined.txt"));
             readAllLines.add(confirmedEvent.getDeclinedName());

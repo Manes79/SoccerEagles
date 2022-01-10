@@ -3,6 +3,7 @@ package pl.manes.soccereagles.handlersuser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.ActionUser;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 
@@ -19,7 +20,7 @@ public class HelpUserHandler extends BasicCommandUserHandler {
     }
 
     @Override
-    public void interceptionUser(MasterUserCommand command) {
+    public void interceptionUser(@NotNull MasterUserCommand command) {
 
         Object action = command.getAction();
 
