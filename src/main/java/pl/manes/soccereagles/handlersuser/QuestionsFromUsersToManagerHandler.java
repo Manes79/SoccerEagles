@@ -3,6 +3,7 @@ package pl.manes.soccereagles.handlersuser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.daouser.QuestionsFromUsersToManagerDao;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 import pl.manes.soccereagles.structureuser.QuestionToManager;
@@ -28,7 +29,7 @@ public class QuestionsFromUsersToManagerHandler extends BasicCommandUserHandler 
     }
 
     @Override
-    public void interceptionUser(MasterUserCommand command) {
+    public void interceptionUser(@NotNull MasterUserCommand command) {
 
         switch (command.getAction()) {
 

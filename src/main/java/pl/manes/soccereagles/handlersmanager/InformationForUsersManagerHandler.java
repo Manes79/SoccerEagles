@@ -3,6 +3,7 @@ package pl.manes.soccereagles.handlersmanager;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.daomanager.InformationForUsersManagerDao;
 import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
 import pl.manes.soccereagles.structuremanager.InformationForUser;
@@ -28,7 +29,7 @@ public class InformationForUsersManagerHandler extends BasicCommandManagerHandle
     }
 
     @Override
-    public void interceptionsManager(MasterManagerCommand command) {
+    public void interceptionsManager(@NotNull MasterManagerCommand command) {
 
         switch (command.getAction()) {
 

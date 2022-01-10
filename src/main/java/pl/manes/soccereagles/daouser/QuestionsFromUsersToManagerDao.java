@@ -2,6 +2,7 @@ package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.structureuser.QuestionToManager;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class QuestionsFromUsersToManagerDao {
         }
     }
 
-    public void addAll(QuestionToManager questionToManager) {
+    public void addAll(@NotNull QuestionToManager questionToManager) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./questionToManager.txt"));
             readAllLines.add(questionToManager.getQuestionName());

@@ -3,10 +3,10 @@ package pl.manes.soccereagles.handlersmanager;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.ActionManager;
 import pl.manes.soccereagles.inputmanager.MasterManagerCommand;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,7 +24,7 @@ public class ResetEventHandler extends BasicCommandManagerHandler {
     }
 
     @Override
-    public void interceptionsManager(MasterManagerCommand command) throws FileNotFoundException {
+    public void interceptionsManager(@NotNull MasterManagerCommand command) {
 
         if (ActionManager.RESET.equals(command.getAction())) {
             log.info("The Event has been reset");

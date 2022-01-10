@@ -2,6 +2,7 @@ package pl.manes.soccereagles.daouser;
 
 import lombok.Data;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.structureuser.ConfirmedEvent;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class ConfirmedUserEventDao {
         }
     }
 
-    public void addAll(ConfirmedEvent confirmedEvent) {
+    public void addAll(@NotNull ConfirmedEvent confirmedEvent) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./confirm.txt"));
             readAllLines.add(confirmedEvent.getConfirmingName());

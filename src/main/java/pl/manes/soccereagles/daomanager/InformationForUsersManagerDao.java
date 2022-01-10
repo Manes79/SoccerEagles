@@ -2,6 +2,7 @@ package pl.manes.soccereagles.daomanager;
 
 import lombok.Data;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.structuremanager.InformationForUser;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class InformationForUsersManagerDao {
         }
     }
 
-    public void addAll(InformationForUser informationForUser) {
+    public void addAll(@NotNull InformationForUser informationForUser) {
         try {
             List<String> readAllLines = Files.readAllLines(Paths.get("./information.txt"));
             readAllLines.add(informationForUser.getInfoForUser());

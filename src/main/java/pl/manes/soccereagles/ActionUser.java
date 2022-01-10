@@ -1,5 +1,7 @@
 package pl.manes.soccereagles;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public enum ActionUser {
@@ -12,7 +14,7 @@ public enum ActionUser {
         this.userMeaning = userMeaning;
     }
 
-    public static ActionUser of(String userMeaning) {
+    public static @NotNull ActionUser of(String userMeaning) {
         for (ActionUser actionUser : values()) {
             if (Objects.equals(actionUser.userMeaning, userMeaning)) {
                 return actionUser;

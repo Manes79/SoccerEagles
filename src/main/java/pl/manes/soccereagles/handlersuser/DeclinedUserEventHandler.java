@@ -3,6 +3,7 @@ package pl.manes.soccereagles.handlersuser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import org.jetbrains.annotations.NotNull;
 import pl.manes.soccereagles.daouser.DeclinedUserEventDao;
 import pl.manes.soccereagles.inputuser.MasterUserCommand;
 import pl.manes.soccereagles.structureuser.DeclinedEvent;
@@ -28,7 +29,7 @@ public class DeclinedUserEventHandler extends BasicCommandUserHandler {
     }
 
     @Override
-    public void interceptionUser(MasterUserCommand command) {
+    public void interceptionUser(@NotNull MasterUserCommand command) {
 
         switch (command.getAction()) {
 
